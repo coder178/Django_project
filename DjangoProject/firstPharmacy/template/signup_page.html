@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RegistrationForm_v1 by Colorlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet" href="{% static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="inner ">
+            <div class="image-holder ">
+                <img src="{% static 'images/medicine-img-2.webp ' %}" alt=" ">
+            </div>
+          
+            
+            <form action="adduser" method="POST">
+                {% csrf_token %}
+                <h3>Registration Form</h3>
+                <div class="form-group ">
+                    <input type="text " placeholder="First Name " name="fname" class="form-control ">
+                    <input type="text " placeholder="Last Name " name="lname" class="form-control ">
+                </div>
+                <div class="form-wrapper ">
+                    <input type="text " placeholder="Username " name="uname" class="form-control ">
+                    <i class="zmdi zmdi-account "></i>
+                </div>
+                <div class="form-wrapper ">
+                    <input type="text " placeholder="Email Address "  name="email" class="form-control ">
+                    <i class="zmdi zmdi-email "></i>
+                </div>
+                <div class="form-wrapper ">
+                    <select name="gender" id=" " class="form-control ">
+							<option value=" " disabled selected>Gender</option>
+							<option value="male ">Male</option>
+							<option value="female ">Female</option>
+							<option value="other ">Other</option>
+						</select>
+                    <i class="zmdi zmdi-caret-down " style="font-size: 17px "></i>
+                </div>
+                <div class="form-wrapper">
+                    <input type="password" placeholder="Password " id="pass" name="password" class="form-control ">
+                    <i class="zmdi zmdi-lock "></i>
+                </div>
+                <div class="form-wrapper ">
+                    <input type="password" placeholder="Confirm Password " id="cpass" name="cpassword" class="form-control ">
+                    <span id="message"></span>
+                    <i class="zmdi zmdi-lock "></i>
+                </div>
+                <div class="form-wrapper">
+                    Address: &nbsp&nbsp
+                    <textarea id="address" name="address" cols="45" rows="2" value="address">
+					</textarea>
+                </div>
+                <button id="register">Register
+						<i class="zmdi zmdi-arrow-right "></i>
+					</button>
+            </form>
+    
+        </div>
+    </div>
+
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#pass, #cpass').on('keyup', function () {
+          if ($('#pass').val() == $('#cpass').val()) {
+            $('#message').html('Matching').css('color', 'green');
+            document.getElementById("register").disabled = false;
+          } 
+          else 
+          {
+            $('#message').html('Not Matching').css('color', 'red');
+            document.getElementById("register").disabled = true;
+          }
+        });
+    
+</script>
+</html>

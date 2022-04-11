@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        .main{
+            background-image: -moz-linear-gradient( 136deg, rgba(216, 217, 233, 0.685) 0%, #3384b38e 100%);
+            background-image: -webkit-linear-gradient( 136deg, rgba(216, 217, 233, 0.685) 0%, #3384b38e 100%);
+            background-image: -ms-linear-gradient( 136deg, rgba(216, 217, 233, 0.685) 0%, #3384b38e 100%); 
+            }
+        h1 {
+            line-height: 1.66;
+            margin-top: 2%;
+            padding: 0;
+            font-weight: bold;
+            color: #222;
+            font-family: Poppins;
+            font-size: 42px;
+            text-decoration: underline;
+        }
+        .part-user{
+            border-radius: 0.5%;
+            background-color:white;
+            width:75%;
+            align:center;
+            margin-left:12%;
+            margin-top:3%;
+        }
+        .submit{
+            padding:0.3%;
+            margin-bottom:1%;
+        }
+        </style> 
+</head>
+<body class="main">
+    
+    <center><h1>Users List</h1></center>
+    <table class="table table-striped part-user table-bordered">
+          <thead>
+              <th>First Name</th>
+              <th>LastName</th>
+              <th>Gender</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Address</th>
+
+          </thead>
+          {% for user in users %}
+          <tr>
+              <td>{{user.firstname}}</td>
+              <td>{{user.lastname}}</td>
+              <td>{{user.gender}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.email}}</td>
+              
+              <td>{{user.address}}</td>
+          </tr>
+          {% endfor %}
+      </table>
+
+
+          
+     
+  
+</body>
+</html>

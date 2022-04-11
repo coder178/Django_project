@@ -1,0 +1,295 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>First Pharmacy</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto:400,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style_shop.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  <style>
+    .cart{
+      margin-left:3%;
+    }
+    .admin{
+      margin-left:30%;
+    }
+  </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      {% comment %} <div class="container">
+        <div class="top_contact-container">
+          <div class="tel_container">
+            <a href="">
+              <img src="{% static 'images/telephone-symbol-button.png' %}" alt=""> Call : +01 1234567890
+            </a>
+          </div>
+          <div class="social-container">
+            <a href="">
+              <img src="images/fb.png" alt="" class="s-1">
+            </a>
+            <a href="">
+              <img src="images/twitter.png" alt="" class="s-2">
+            </a>
+            <a href="">
+              <img src="images/instagram.png" alt="" class="s-3">
+            </a>
+          </div>
+        </div>
+      </div> {% endcomment %}
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="/home">
+            <img src="{% static 'images/logo.png' %}" alt="">
+            <span>
+              First Pharmacy
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about"> About </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/buy"> Online Buy </a>
+                </li>
+               
+                <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact us</a>
+                </li>
+              </ul>
+              {% comment %} <form class="form-inline ">
+                <input type="search" placeholder="Search">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+              </form> {% endcomment %}
+              <div class="login_btn-contanier admin">
+                <a href="/login">
+                <button type="submit" class="">Admin Login</button>
+                </a>
+              </div>
+              <div class="login_btn-contanier cart">
+                <a href="/showcart">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg>
+                  <span>
+                    &nbsp;Cart
+                  </span>
+                </a>
+              </div>
+              <div class="login_btn-contanier ml-0 ml-lg-5">
+                <a href="/logout">
+                  <img src="{% static 'images/user.png' %}" alt="">
+                  <span>
+                    Logout
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container ">
+        <h2>
+          About Us
+        </h2>
+      </div>
+
+      <div class="img-box">
+        <img src="{% static 'images/about-medicine.png' %}" alt="">
+      </div>
+      <div class="detail-box">
+        <p>
+          Your trusted neighbourhood pharmacy and a one stop solution for all your health and wellness needs is what we tell our clients about who we are. As for our customers, we're their partners in taking care of their mental and physical health. Together with them in the continuous process of rejuvenating the mind, body, and soul. Products you love today and tomorrow, find everything under one roof at Wellness Forever.<br/><br/>
+          Our vision is to create a chain of pharmacies that deliver unmatched performance in terms of availability of products, lowering healthcare cost and value added services.
+        </p>
+        <div class="d-flex justify-content-center">
+          <a href="https://corporate.wellnessforever.com/about-us.php">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h4>
+              Contact
+            </h4>
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/telephone-symbol-button.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  +91 9876543201
+                </h6>
+              </div>
+            </div>
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/email.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  firstpharmacy@gmail.com
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_menu">
+            <h4>
+              Menu
+            </h4>
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about"> About </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/buy"> Online Buy </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact"> Contact us </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info_news">
+            <h4>
+              newsletter
+            </h4>
+            <form action="">
+              <input type="text" placeholder="Enter Your email">
+              <div class="d-flex justify-content-center justify-content-md-end mt-3">
+                <button>
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2021 All Rights Reserved.
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js">
+  </script>
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      navText: [],
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    });
+  </script>
+  <script type="text/javascript">
+    $(".owl-2").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      navText: [],
+      autoplay: true,
+
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

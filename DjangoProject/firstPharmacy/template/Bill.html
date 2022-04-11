@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bill Details</title>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed'
+	rel='stylesheet' type='text/css'>
+<style>
+.headerFont {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 24px;
+}
+
+.subFont {
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+}
+
+.specialHead {
+	font-family: 'Oswald', sans-serif;
+}
+
+.normalFont {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+	background-color: rgb(223, 222, 222);
+}
+table{
+	margin-top:5%;
+	width:50%;
+}
+</style>
+</head>
+<body>
+	<form id="form1">
+		<div class="form-group">
+			<table border="1" align=center>
+				<tr>
+					<td colspan="10">
+						<h2 class="specialHead" align=center>
+							FirstPharmacy
+							</h1>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="10">
+						<p class="normalFont" align=center>
+							<b>*****   &nbsp;&nbsp;Thank You...  Visit Again&nbsp;&nbsp;   *****</b>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td><label><strong>Name :</strong></label></td>
+					<td colspan="3">{{User.firstname}} {{User.lastname}}</td>
+				</tr>
+				<tr>
+					<td><label><strong>User Name :</strong></label></td>
+					<td colspan="3">{{User.username}}</td>
+				</tr>
+				<tr>
+					<td><label><strong>Email :</strong></label></td>
+					<td colspan="3">{{User.email}}</td>
+				</tr>
+				
+				<tr>
+					<td><label><strong>Address :</strong></label></td>
+					<td colspan="3">{{User.address}}</td>
+				</tr>
+			
+				
+
+
+
+				<tr>
+					<td colspan="10">
+						<h3 class="normalFont">Products Details</h3>
+
+
+						<table>
+							<thead>
+								<tr>
+
+									<th>Product</th>
+									<th>Price</th>
+									<th>Quantity</th>
+									<th>Total</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								{% for item in items %}
+									<tr>
+
+										<td><center>
+												<h5>{{item.productid.productname}}</h5>
+											</center></td>
+										<td><center>
+												<h5>{{item.productid.price}}</h5>
+											</center></td>
+										<td><center>{{item.quantity}}</center></td>
+										<td><center>
+												<h5>{{item.total}}</h5>
+											</center></td>
+
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td><label><strong>Total Amount :</strong></label></td>
+					<td colspan="3">{{order}}</td>
+					<td>
+                        <center><button class="normalFont" type="button" onClick="window.print()"><strong>Print</strong></button>
+                        </center>
+                    </td>
+				</tr>
+
+
+			</table>
+		</div>
+	</form>
+	<center><a class="nav-link scrollto" href="/logout"><h2>Log Out</h2></a></center>
+	
+</body>
+</html>
